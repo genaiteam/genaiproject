@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=genaidb
+      - POSTGRES_USER=genai_db_user
+      - POSTGRES_PASSWORD=genai_db_pass
+
